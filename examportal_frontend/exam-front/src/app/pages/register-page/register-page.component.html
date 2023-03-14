@@ -1,0 +1,120 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col col-md-6 offset-md-3">
+        <mat-card>
+        <div class="register-form">
+          <h1 class="text-center">REGISTER HERE!!</h1>
+          <!-- {{ user | json }} -->
+          <form (ngSubmit)="registerFormSubmit()" #registerForm="ngForm">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Username</mat-label>
+
+              <input
+                required="true"
+                ngModel pattern="[a-zA-Z0-9 ]*"
+                matInput
+                placeholder="Enter a Unique Username"
+                [(ngModel)]="user.username"
+                name="username"
+              />
+              <mat-hint>Unique Username</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Enter your password</mat-label>
+              <input
+                required="true"
+                ngModel
+                minlength="8"
+                [(ngModel)]="user.password"
+                name="password"
+                matInput
+                [type]="hide ? 'password' : 'text'"
+              />
+              <button
+                mat-icon-button
+                matSuffix
+                (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide"
+                type="button"
+              >
+                <mat-icon>{{
+                  hide ? "visibility_off" : "visibility"
+                }}</mat-icon>
+              </button>
+              <mat-hint>
+                A password must contain *Special Character *Number
+              </mat-hint>
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>First Name</mat-label>
+              <input
+                required="true"
+                matInput
+                placeholder="Enter a First Name"
+                [(ngModel)]="user.firstName"
+                name="firstName"
+              />
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Last Name</mat-label>
+              <input
+                required="true"
+                [(ngModel)]="user.lastName"
+                name="lastName"
+                matInput
+                placeholder="Enter a Last Name"
+              />
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Email</mat-label>
+              <input
+                ngModel
+                email="true"
+                required="true"
+                [(ngModel)]="user.email"
+                name="email"
+                matInput
+                placeholder="Enter a Email"
+              />
+              <mat-hint>abc@gmail.com</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Phone Number</mat-label>
+              <input
+                [(ngModel)]="user.phoneNumber"
+                name="phoneNumber"
+                type="number"
+                matInput
+                placeholder="Enter Phone Number(without country code)"
+              />
+              <mat-hint>By default country code is (+91) </mat-hint>
+            </mat-form-field>
+
+            <div class="container text-center">
+              <button
+              [disabled]="registerForm.invalid"
+              mat-raised-button color="primary">Submit</button>
+              <button
+                mat-raised-button
+                class="margin-left"
+                color="warn"
+                type="reset"
+              >
+                Clear
+              </button>
+            </div>
+          </form>
+        </div>
+      </mat-card>
+
+      </div>
+    </div>
+  </div>
+</div>

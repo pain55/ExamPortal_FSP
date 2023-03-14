@@ -1,0 +1,16 @@
+<div class="container-fuild">
+  <div class="row">
+      <mat-card class="category-card" *ngFor="let category of categories">
+        <mat-card-title> {{ category.categoryTitle }}</mat-card-title>
+        <mat-card-subtitle>{{ category.categoryId }}</mat-card-subtitle>
+        <mat-card-content>
+          {{ category.categoryDescription }}
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button (click)="selected(category.categoryId)" color="primary">Select</button>
+          <button mat-raised-button color="accent">Update</button>
+          <button mat-raised-button  (click)="deleteCategory(category.categoryId)" color="warn">Delete</button>
+        </mat-card-actions>
+      </mat-card>
+  </div>
+</div>

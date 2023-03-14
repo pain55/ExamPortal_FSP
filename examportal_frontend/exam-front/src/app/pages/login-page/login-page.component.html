@@ -1,0 +1,69 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col col-md-6 offset-md-3 mt50">
+        <mat-card>
+          <div class="login-form">
+            <h3 class="text-center">Login Form</h3>
+            <!-- {{logindata | json}} -->
+            <form (ngSubmit)="loginFormSubmit()" #loginForm="ngForm">
+              <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Username</mat-label>
+                <input
+                  ngModel required
+                  matInput
+                  [(ngModel)]="loginData.username"
+                  placeholder="Enter a Unique Username"
+                  name="username"
+                />
+                <mat-hint>Unique Username</mat-hint>
+              </mat-form-field>
+
+              <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Enter your password</mat-label>
+                <input
+                  ngModel required="true"
+                  name="password"
+                  matInput
+                  [(ngModel)]="loginData.password"
+                  [type]="hide ? 'password' : 'text'"
+                />
+                <button
+                  mat-icon-button
+                  matSuffix
+                  (click)="hide = !hide"
+                  [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide"
+                  type="button"
+                >
+                  <mat-icon>{{
+                    hide ? "visibility_off" : "visibility"
+                  }}</mat-icon>
+                </button>
+                <mat-hint>
+                  A password must contain *Special Character *Number
+                </mat-hint>
+              </mat-form-field>
+
+              <div class="container text-center">
+                <button mat-raised-button color="primary" class="m20"
+                  [disabled]="loginForm.invalid"
+                >
+                  Submit
+                </button>
+                <button
+                  mat-raised-button
+                  class="mr20"
+                  color="warn"
+                  type="reset"
+                >
+                  Clear
+                </button>
+              </div>
+            </form>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

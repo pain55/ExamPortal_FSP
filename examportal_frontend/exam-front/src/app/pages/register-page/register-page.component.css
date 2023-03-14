@@ -1,0 +1,23 @@
+.register-form {
+  margin-top:5%;
+  /* background-color: aqua; */
+}
+.margin-left {
+  margin-left: 2em;
+}
+.full-width {
+  width: 100%;
+}
+
+.bootstrap-wrapper{
+  /* background-image: url(../../../assets/images/bg.jpg); */
+  /* background-size:contain; */
+  height: 100%;
+}
+
+.register-form {
+  /* border: 2px solid black; */
+  padding: 5px;
+  border-radius: 10px;
+  /* box-shadow: black 5px 5px 10px 3px; */
+}

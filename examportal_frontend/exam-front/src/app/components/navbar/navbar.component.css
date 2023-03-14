@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap');
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.logo-name {
+  font-family: 'Rubik Spray Paint', cursive;
+  font-weight: 500;
+  font-size: large;
+}
+
+.username {
+  width: fit-content;
+}

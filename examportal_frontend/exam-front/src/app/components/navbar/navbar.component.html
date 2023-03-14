@@ -1,0 +1,54 @@
+<p>
+  <mat-toolbar>
+    <a
+      mat-icon-button
+      aria-label="icon-button with menu icon"
+      routerLink="/"
+    >
+      <mat-icon>auto_stories</mat-icon>
+    </a>
+    <span class="logo-name">Exam Portal</span>
+    <span class="example-spacer"></span>
+
+      <a
+        *ngIf="!isLoggedin"
+        mat-icon-button
+        class="example-icon favorite-icon"
+        [routerLink]="'/login'"
+      >
+        login
+        <!-- <mat-icon>login</mat-icon> -->
+      </a>
+
+
+      <a
+        *ngIf="!isLoggedin"
+        mat-icon-button
+        class="example-icon m10"
+        routerLink="/register"
+      >
+        <!-- <mat-icon>person_add</mat-icon> -->
+        register
+      </a>
+
+      <a
+        *ngIf="isLoggedin"
+        mat-icon-button
+        class="fit-content"
+        routerLink="admin-dashboard/profile"
+      >
+        {{ user.username }}
+        <!-- <mat-icon>login</mat-icon> -->
+      </a>
+      <a
+        *ngIf="isLoggedin"
+        (click)="logout()"
+        mat-icon-button
+        class="example-icon m10"
+      >
+        <!-- <mat-icon>person_add</mat-icon> -->
+        Logout
+      </a>
+
+  </mat-toolbar>
+</p>

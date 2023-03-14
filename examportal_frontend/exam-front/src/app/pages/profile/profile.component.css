@@ -1,0 +1,19 @@
+.profile-pic {
+  width: 300px;
+  height: 250px;
+  margin:1rem auto;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+
+table  {
+  width: 100%;
+}
+
+table td {
+  width: 50%;
+  font-size: medium;
+  font-weight: 500;
+  padding-top: 1.5rem;
+}
