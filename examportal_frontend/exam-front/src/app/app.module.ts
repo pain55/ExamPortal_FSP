@@ -10,7 +10,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon'
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -26,6 +26,9 @@ import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import {MatTableModule} from '@angular/material/table';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { UpdateCategoryComponent } from './pages/admin/update-category/update-category.component';
+
 
 @NgModule({
   declarations: [
@@ -40,6 +43,7 @@ import { AddCategoryComponent } from './pages/admin/add-category/add-category.co
     SidebarComponent,
     CategoriesComponent,
     AddCategoryComponent,
+    UpdateCategoryComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +60,8 @@ import { AddCategoryComponent } from './pages/admin/add-category/add-category.co
     MatCardModule,
     MatListModule,
     MatTableModule,
+    MatDialogModule,
+    ReactiveFormsModule
   ],
   providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]

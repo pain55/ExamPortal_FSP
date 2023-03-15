@@ -1,0 +1,49 @@
+<h2 mat-dialog-title class="text-center">Update Category</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="updateForm" >
+    <mat-form-field appearance="outline" class="full-width mt20">
+      <mat-label>categoryId:</mat-label>
+      <input
+        type="number"
+        matInput
+        formControlName="categoryId"
+        [defaultValue]="dialogCategory.categoryId"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width mt20">
+      <mat-label>Category Title:</mat-label>
+      <input
+        matInput
+        placeholder="Enter title name"
+        formControlName="categoryTitle"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width mt20">
+      <mat-label>Category Description:</mat-label>
+      <textarea
+        matInput
+        formControlName="categoryDescription"
+      ></textarea>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" class="full-width mt10"
+  (click)="updateFormFunc()"
+  >
+    Update
+  </button>
+</div>
+<div mat-dialog-actions>
+  <button
+    mat-raised-button
+    mat-dialog-close
+    color="warn"
+    class="full-width mt10"
+  >
+    Cancel
+  </button>
+</div>

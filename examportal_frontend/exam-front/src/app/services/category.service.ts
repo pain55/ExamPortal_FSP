@@ -9,14 +9,18 @@ import { Category } from '../model/category';
 export class CategoryService {
   constructor(private http:HttpClient ) { }
 
-  public getCategories() {
-    return this.http.get(`${baseUrl}/category/`);
-  }
 
   public addCategory(category:Category) {
     return this.http.post(`${baseUrl}/category/`,category);
   }
 
+  public updateCategory(category:Category) {
+    return this.http.put(`${baseUrl}/category/`,category);
+  }
+
+  public getCategories() {
+    return this.http.get(`${baseUrl}/category/`);
+  }
 
   public deleteCategory(categoryId:number) {
    return this.http.delete(`${baseUrl}/category/${categoryId}`);

@@ -7,9 +7,9 @@
           {{ category.categoryDescription }}
         </mat-card-content>
         <mat-card-actions>
-          <button mat-raised-button (click)="selected(category.categoryId)" color="primary">Select</button>
-          <button mat-raised-button color="accent">Update</button>
-          <button mat-raised-button  (click)="deleteCategory(category.categoryId)" color="warn">Delete</button>
+          <button mat-raised-button  color="primary" (click)="selected(category.categoryId)">Select</button>
+          <button mat-raised-button color="accent" (click)="updateDialog(category)">Update</button>
+          <button mat-raised-button  color="warn" (click)="deleteCategory(category.categoryId)" >Delete</button>
         </mat-card-actions>
       </mat-card>
   </div>
