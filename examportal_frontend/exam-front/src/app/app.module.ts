@@ -28,7 +28,12 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UpdateCategoryComponent } from './pages/admin/update-category/update-category.component';
-
+import { QuizzesComponent } from './pages/admin/quizzes/quizzes.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
+import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -44,6 +49,9 @@ import { UpdateCategoryComponent } from './pages/admin/update-category/update-ca
     CategoriesComponent,
     AddCategoryComponent,
     UpdateCategoryComponent,
+    QuizzesComponent,
+    AddQuizComponent,
+    UpdateQuizComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +69,10 @@ import { UpdateCategoryComponent } from './pages/admin/update-category/update-ca
     MatListModule,
     MatTableModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatMenuModule,
+    MatSlideToggleModule,
+    MatSelectModule,
   ],
   providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]

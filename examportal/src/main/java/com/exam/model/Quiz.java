@@ -27,7 +27,7 @@ public class Quiz {
 	private String quizDescription;
 	private long maxMarks;
 	private long totalNumberOfQuestions;
-	private boolean isActive = false;
+	private boolean isActive;
 	
 	
 	@ManyToOne(fetch = FetchType.EAGER)

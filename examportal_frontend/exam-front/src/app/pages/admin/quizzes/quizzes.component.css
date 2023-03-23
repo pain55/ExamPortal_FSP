@@ -1,0 +1,25 @@
+.quiz-card {
+  width: 25rem;
+  margin: 3rem 2rem;
+  padding-top: 0%;
+  padding-right: 0%;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+.card-nav {
+  background-color: #fff;
+  max-height: fit-content;
+  padding: 0px;
+  margin-top: 0%;
+}
+
+.card-main-content {
+  padding-right: 16px;
+ }
+
+ .add-btn {
+  position: relative;
+  margin: auto 1.5rem;
+    border-radius: 50%;
+ }

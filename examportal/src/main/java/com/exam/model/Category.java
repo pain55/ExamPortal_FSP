@@ -27,7 +27,7 @@ public class Category {
 	private String categoryDescription;
 	
 	
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "category")
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "category")
 	@JsonIgnore
 	private Set<Quiz> quizzes = new LinkedHashSet<Quiz>();
 	

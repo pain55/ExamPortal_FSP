@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
+import { QuizzesComponent } from './pages/admin/quizzes/quizzes.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
@@ -39,7 +40,11 @@ const routes: Routes = [
       {
         path:"add-category",
         component: AddCategoryComponent
-      }
+      },
+      {
+        path:"quizzes",
+        component: QuizzesComponent
+      },
 
     ]
   },

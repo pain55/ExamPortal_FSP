@@ -1,0 +1,77 @@
+<h2 mat-dialog-title class="text-center">Add Quiz</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="addQuizForm" ngNativeValidate>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Quiz Title: </mat-label>
+      <input matInput type="text" formControlName="quizTitle" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Quiz Description: </mat-label>
+      <textarea matInput formControlName="quizDescription"> </textarea>
+    </mat-form-field>
+
+    <div class="bootstrap-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col col-md-6">
+            <mat-form-field appearance="outline">
+              <mat-label>Total Marks: </mat-label>
+              <input matInput type="number" formControlName="maxMarks" />
+            </mat-form-field>
+          </div>
+          <div class="col col-md-6">
+            <mat-form-field appearance="outline">
+              <mat-label>Total Questions: </mat-label>
+              <input
+                matInput
+                type="number"
+                formControlName="totalNumberOfQuestions"
+              />
+            </mat-form-field>
+          </div>
+        </div>
+
+        <!-- <div class="col col-md-6">
+          <mat-label>Publish Quiz: </mat-label> -->
+          <mat-slide-toggle formControlName="active">
+          </mat-slide-toggle>
+
+        <div class="row">
+          <div class="col col-md-6">
+            <mat-form-field appearance="outline" formGroupName="category">
+              <mat-label>Select Category</mat-label>
+              <mat-select formControlName="categoryId">
+                <mat-option *ngFor="let c of categories" [value]="c.categoryId">
+                  {{ c.categoryTitle }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<div mat-dialog-actions>
+  <button
+    mat-raised-button
+    color="primary"
+    class="full-width mt10"
+    (click)="addQuiz()"
+  >
+    Add
+  </button>
+</div>
+<div mat-dialog-actions>
+  <button
+    mat-raised-button
+    mat-dialog-close
+    color="warn"
+    class="full-width mt10"
+  >
+    Cancel
+  </button>
+</div>

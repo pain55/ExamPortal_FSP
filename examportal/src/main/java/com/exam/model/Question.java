@@ -35,7 +35,7 @@ public class Question {
 	@Column(length = 1200)
 	private String answer;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "quizId")
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private Quiz quiz;
