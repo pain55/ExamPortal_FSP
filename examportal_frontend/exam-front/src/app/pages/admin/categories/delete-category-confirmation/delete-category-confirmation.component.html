@@ -1,0 +1,6 @@
+<h1 mat-dialog-title class="text-center" >Delete Category</h1>
+<mat-dialog-content> Would you like to delete the Category with <b>id -> {{data.categoryId}} </b></mat-dialog-content>
+<mat-dialog-actions class="text-center">
+  <button mat-raised-button mat-dialog-close>Cancel</button>
+  <button mat-raised-button color="warn" (click)="confirmDeleteFunc()" >Confirm</button>
+</mat-dialog-actions>

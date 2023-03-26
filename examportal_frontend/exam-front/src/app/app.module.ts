@@ -24,7 +24,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import {MatListModule} from '@angular/material/list';
 import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import {MatTableModule} from '@angular/material/table';
-import { CategoriesComponent } from './components/categories/categories.component';
+import { CategoriesComponent } from './pages/admin/categories/categories.component';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UpdateCategoryComponent } from './pages/admin/update-category/update-category.component';
@@ -34,6 +34,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
 import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 import {MatSelectModule} from '@angular/material/select';
+import { DeleteQuizConfirmationComponent } from './pages/admin/quizzes/delete-quiz-confirmation/delete-quiz-confirmation.component';
+import { DeleteCategoryConfirmationComponent } from './pages/admin/categories/delete-category-confirmation/delete-category-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import {MatSelectModule} from '@angular/material/select';
     QuizzesComponent,
     AddQuizComponent,
     UpdateQuizComponent,
+    DeleteQuizConfirmationComponent,
+    DeleteCategoryConfirmationComponent,
   ],
   imports: [
     BrowserModule,

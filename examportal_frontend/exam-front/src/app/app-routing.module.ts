@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CategoriesComponent } from './components/categories/categories.component';
+import { CategoriesComponent } from './pages/admin/categories/categories.component';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
 import { QuizzesComponent } from './pages/admin/quizzes/quizzes.component';

@@ -4,6 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Quiz } from 'src/app/model/quiz';
 import { QuizService } from 'src/app/services/quiz.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-update-quiz',
@@ -14,6 +15,7 @@ export class UpdateQuizComponent implements OnInit {
 
   updateForm !: FormGroup;
 
+  toggle:boolean = true;
 
   constructor(
     private updateFormBuilder: FormBuilder,
@@ -34,7 +36,7 @@ export class UpdateQuizComponent implements OnInit {
       "quizDescription":["",Validators.required],
       "maxMarks":["",Validators.required],
       "totalNumberOfQuestions":["",Validators.required],
-      "isActive":["",Validators.required],
+      "active":["",Validators.required],
       "category": this.updateFormBuilder.group({
         "categoryId":["",Validators.required]
       })
@@ -47,8 +49,9 @@ export class UpdateQuizComponent implements OnInit {
       this.updateForm.controls["quizDescription"].setValue(this.quizData.quizDescription);
       this.updateForm.controls["maxMarks"].setValue(this.quizData.maxMarks);
       this.updateForm.controls["totalNumberOfQuestions"].setValue(this.quizData.totalNumberOfQuestions);
-      this.updateForm.controls["isActive"].setValue(this.quizData.isActive);
       this.updateForm.get(['category','categoryId'])?.setValue(this.quizData.category.categoryId);
+
+      this.toggle = this.quizData.active;
     }
 
   }
@@ -58,6 +61,9 @@ export class UpdateQuizComponent implements OnInit {
     this.quizService.updateQuiz(this.updateForm.value).subscribe({
       next:(value)=> {
         console.log(value);
+        Swal.fire("Quiz Updated Successfully","",'success');
+          this.updateForm.reset;
+          this.dialogRef.close("Quiz Updated");
       },
       error:(err) => {
         console.log(err);

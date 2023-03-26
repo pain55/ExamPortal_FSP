@@ -41,7 +41,7 @@
 
       <div class="row">
         <div class="col col-md-6">
-          <mat-slide-toggle color="primary" formControlName="isActive">
+          <mat-slide-toggle color="primary" [(ngModel)]="toggle"  formControlName="active">
             Quiz Status
           </mat-slide-toggle>
         </div>

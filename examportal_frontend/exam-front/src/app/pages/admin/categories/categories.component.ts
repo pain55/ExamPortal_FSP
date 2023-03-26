@@ -5,6 +5,7 @@ import { Category } from 'src/app/model/category';
 import { UpdateCategoryComponent } from 'src/app/pages/admin/update-category/update-category.component';
 import { CategoryService } from 'src/app/services/category.service';
 import Swal from 'sweetalert2';
+import { DeleteCategoryConfirmationComponent } from './delete-category-confirmation/delete-category-confirmation.component';
 
 @Component({
   selector: 'app-categories',
@@ -15,7 +16,8 @@ export class CategoriesComponent implements OnInit {
   constructor(
     private categoryService: CategoryService,
     private _dialog: MatDialog,
-    private snack: MatSnackBar
+    private snack: MatSnackBar,
+    private dialog: MatDialog
   ) {}
 
   categories: Category[] = [];
@@ -23,11 +25,11 @@ export class CategoriesComponent implements OnInit {
   ngOnInit(): void {
     this.categoryService.getCategories().subscribe({
       next: (data: any) => {
-        console.log('checking whether we are getting data from api' + data);
+        // console.log('checking whether we are getting data from api' + data);
         this.categories = data;
         console.log(
-          'Checking whether the data is copied into categories list' +
-            this.categories
+          'Checking whether the data is copied into categories list',
+          this.categories
         );
       },
       error: (error) => {
@@ -56,15 +58,29 @@ export class CategoriesComponent implements OnInit {
   }
 
   deleteCategory(categoryId: number) {
-    this.categoryService.deleteCategory(categoryId).subscribe({
+    const deleteDialogRef = this.dialog.open(
+      DeleteCategoryConfirmationComponent,
+      {
+        width: '20rem',
+        data: { categoryId },
+      }
+    );
+
+    deleteDialogRef.afterClosed().subscribe({
       next: (value) => {
-        Swal.fire('Successfully Deleted', '', 'success');
-        this.ngOnInit();
-      },
-      error: (err) => {
-        this.snack.open('Error occured deleting categories', 'X', {
-          duration: 3000,
-        });
+        if (value) {
+          this.categoryService.deleteCategory(categoryId).subscribe({
+            next: (value) => {
+              Swal.fire('Successfully Deleted', '', 'success');
+              this.ngOnInit();
+            },
+            error: (err) => {
+              this.snack.open('Error occured deleting categories', 'X', {
+                duration: 3000,
+              });
+            },
+          });
+        }
       },
     });
   }

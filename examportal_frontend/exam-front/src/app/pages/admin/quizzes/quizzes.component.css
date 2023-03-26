@@ -16,6 +16,7 @@
 
 .card-main-content {
   padding-right: 16px;
+  overflow:auto
  }
 
  .add-btn {
@@ -23,3 +24,5 @@
   margin: auto 1.5rem;
     border-radius: 50%;
  }
+
+

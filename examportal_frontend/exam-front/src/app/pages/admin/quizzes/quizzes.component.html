@@ -1,46 +1,41 @@
 <div class="container-fuild">
   <div class="row">
-    <mat-card class="quiz-card"  *ngFor="let quiz of quizzes">
+    <mat-card class="quiz-card" *ngFor="let quiz of quizzes">
       <mat-toolbar class="card-nav">
         <span class="spacer"></span>
         <section class="example-section">
           <mat-slide-toggle
-              class="example-margin"
-              color="primary"
-              [checked]="quiz.isActive"
-              >
-            </mat-slide-toggle>
-          </section>
-          <button
+            class="example-margin"
+            color="primary"
+            [checked]="quiz.active"
+            (change)="activate(quiz)"
+          >
+          </mat-slide-toggle>
+        </section>
+        <button
           mat-icon-button
           color="secondary"
           aria-label=" icon-button with edit icon"
           (click)="openUpdateDialog(quiz)"
-          >
+        >
           <mat-icon>edit</mat-icon>
         </button>
         <button
-        mat-icon-button
-        color="warn"
-        aria-label="Example icon-button with share icon"
-        (click)="deleteQuiz(quiz.quizId)"
+          mat-icon-button
+          color="warn"
+          aria-label="Example icon-button with share icon"
+          (click)="deleteQuiz(quiz.quizId)"
         >
-        <mat-icon>delete</mat-icon>
-      </button>
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-toolbar>
 
+      <div class="card-main-content">
+        <mat-card-title class="mt10">{{ quiz.quizTitle }} </mat-card-title>
+        <mat-card-subtitle>{{ quiz.quizId }}</mat-card-subtitle>
 
-    </mat-toolbar>
-
-    <div class="card-main-content">
-      <h3 >
-        {{quiz.isActive}}
-
-      </h3>
-      <mat-card-title class="mt10">{{ quiz.quizTitle }} </mat-card-title>
-      <mat-card-subtitle>{{ quiz.quizId }}</mat-card-subtitle>
-
-      <mat-card-content>
-        {{ quiz.quizDescription }}
+        <mat-card-content class="quiz-content">
+          {{ quiz.quizDescription }}
         </mat-card-content>
 
         <mat-card-actions>
@@ -57,18 +52,21 @@
             mat-raised-button
             class="mt10"
             color="primary"
-            [disabled]="!quiz.isActive"
+            [disabled]="!quiz.active"
           >
-            Take Quiz
+            Questions
           </button>
         </mat-card-actions>
       </div>
     </mat-card>
 
-    <button mat-raised-button color="primary" class="add-btn" (click)="openAddDialog()">
+    <button
+      mat-raised-button
+      color="primary"
+      class="add-btn"
+      (click)="openAddDialog()"
+    >
       <mat-icon>add</mat-icon>
     </button>
-
   </div>
 </div>
-
