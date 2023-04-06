@@ -55,9 +55,16 @@ public class QuestionController {
 	}
 	
 	@GetMapping("/quiz/{quizId}")
-	public Set<Question> getAllQuestionsByQuiz(@PathVariable Long quizId) {
+	public Set<Question> getQuestionsByQuiz(@PathVariable Long quizId) {
 		Quiz quiz = this.quizService.getQuiz(quizId);
 		return this.questionService.getQuestionsByQuiz(quiz);
+	}
+	
+	@GetMapping("/quiz/all/{quizId}")
+	public Set<Question> getAllQuestionsByQuiz(@PathVariable Long quizId) {
+		Quiz quiz = this.quizService.getQuiz(quizId);
+		
+		return this.questionService.getAllQuestionsByQuiz(quiz);
 	}
 	
 

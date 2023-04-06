@@ -1,0 +1,39 @@
+
+<div class="text-center add-button">
+  <button mat-raised-button color="primary">Add</button>
+</div>
+<mat-card class="question-card" *ngFor="let question of questions; let i=index">
+  <div class="row">
+    <div class="col col-md-12">
+      <h1>{{i+1}})  {{question.questionContent}}?</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-md-6">
+      <h4>a) {{question.option1}}</h4>
+    </div>
+    <div class="col col-md-6">
+      <h4>b) {{question.option2}}</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-md-6">
+      <h4>c) {{question.option3}}</h4>
+    </div>
+    <div class="col col-md-6">
+      <h4>d) {{question.option4}}</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+
+      <h2> Correct answer-> {{question.answer}}</h2>
+    </div>
+  </div>
+  <mat-card-actions>
+
+    <button mat-raised-button color="secondary">Update</button>
+    <button mat-raised-button color="warn" (click)="deleteQuestion(question)" >Delete</button>
+  </mat-card-actions>
+</mat-card>
+

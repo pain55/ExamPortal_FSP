@@ -10,6 +10,7 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { AdminGuard } from './services/admin.guard';
 import { UserGuard } from './services/user.guard';
+import { QuestionsComponent } from './pages/admin/questions/questions.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,10 @@ const routes: Routes = [
         path:"quizzes",
         component: QuizzesComponent
       },
+      {
+        path:"questions/:quizId/:quizTitle",
+        component:QuestionsComponent,
+      }
 
     ]
   },

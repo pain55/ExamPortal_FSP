@@ -51,16 +51,22 @@ public class QuestionServiceImpl implements QuestionService {
 		List<Question> list = new ArrayList<>(questions);
 		
 		if(list.size() > quiz.getTotalNumberOfQuestions()) {
-			list = list.subList(0, ((int)quiz.getTotalNumberOfQuestions()+1));
+			list = list.subList(0, ((int)quiz.getTotalNumberOfQuestions()));
 		}
 		Collections.shuffle(list);
 		return new HashSet<>(list);
 	}
 
 	@Override
+	public Set<Question> getAllQuestionsByQuiz(Quiz quiz) {
+		return quiz.getQuestions();
+	}
+	
+	@Override
 	public void deleteQuestionById(Long questionId) {
 		this.questionRepository.deleteById(questionId);
 	}
+
 
 
 	

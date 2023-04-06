@@ -1,8 +1,8 @@
 <mat-card class="full-width pd-0">
   <mat-action-list>
 
-    <button mat-list-item routerLink="/admin-dashboard/"> <mat-icon matListItemIcon class="m10">home</mat-icon> Home</button>
-    <button mat-list-item routerLink="/admin-dashboard/profile"> <mat-icon matListItemIcon class="m10">person</mat-icon> profile</button>
+    <button mat-list-item [routerLink]="['/admin-dashboard/']"> <mat-icon matListItemIcon class="m10">home</mat-icon> Home</button>
+    <button mat-list-item [routerLink]="['/admin-dashboard/profile']"> <mat-icon matListItemIcon class="m10">person</mat-icon> profile</button>
     <button mat-list-item routerLink="/admin-dashboard/categories"> <mat-icon matListItemIcon class="m10">category</mat-icon> Categories</button>
     <button mat-list-item routerLink="/admin-dashboard/add-category"> <mat-icon matListItemIcon class="m10">add</mat-icon> Add Categories</button>
     <button mat-list-item routerLink="/admin-dashboard/quizzes"> <mat-icon matListItemIcon class="m10">quiz</mat-icon> Quiz</button>

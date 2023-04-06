@@ -52,6 +52,7 @@
             mat-raised-button
             class="mt10"
             color="primary"
+            [routerLink]="'/admin-dashboard/questions/'+ quiz.quizId + '/' + quiz.quizTitle"
             [disabled]="!quiz.active"
           >
             Questions

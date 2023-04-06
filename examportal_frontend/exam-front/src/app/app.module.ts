@@ -36,6 +36,7 @@ import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.compo
 import {MatSelectModule} from '@angular/material/select';
 import { DeleteQuizConfirmationComponent } from './pages/admin/quizzes/delete-quiz-confirmation/delete-quiz-confirmation.component';
 import { DeleteCategoryConfirmationComponent } from './pages/admin/categories/delete-category-confirmation/delete-category-confirmation.component';
+import { QuestionsComponent } from './pages/admin/questions/questions.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { DeleteCategoryConfirmationComponent } from './pages/admin/categories/de
     UpdateQuizComponent,
     DeleteQuizConfirmationComponent,
     DeleteCategoryConfirmationComponent,
+    QuestionsComponent,
   ],
   imports: [
     BrowserModule,
